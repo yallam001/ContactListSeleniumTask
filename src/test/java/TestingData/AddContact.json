@@ -1,0 +1,67 @@
+[
+  {
+    "firstName": "John",
+    "lastName": "Doe",
+    "birthDate": "1985-03-15",
+    "email": "john.doe@example.com",
+    "phone": "8005551234",
+    "streetAddress1": "123 Main St",
+    "streetAddress2": "Apt 4B",
+    "city": "New York",
+    "state": "NY",
+    "postalCode": "10001",
+    "country": "USA"
+  },
+  {
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "birthDate": "1990-07-22",
+    "email": "jane.smith@example.com",
+    "phone": "8005551234",
+    "streetAddress1": "45 Baker Street",
+    "streetAddress2": "",
+    "city": "London",
+    "state": "Greater London",
+    "postalCode": "W1U 8EW",
+    "country": "UK"
+  },
+  {
+    "firstName": "Carlos",
+    "lastName": "Martinez",
+    "birthDate": "1978-11-02",
+    "email": "carlos.martinez@example.com",
+    "phone": "8005551234",
+    "streetAddress1": "Calle Mayor 12",
+    "streetAddress2": "Piso 3",
+    "city": "Madrid",
+    "state": "Madrid",
+    "postalCode": "28013",
+    "country": "Spain"
+  },
+  {
+    "firstName": "Emily",
+    "lastName": "Johnson",
+    "birthDate": "1995-05-30",
+    "email": "emily.johnson@example.com",
+    "phone": "8005551234",
+    "streetAddress1": "78 George Street",
+    "streetAddress2": "",
+    "city": "Sydney",
+    "state": "NSW",
+    "postalCode": "2000",
+    "country": "Australia"
+  },
+  {
+    "firstName": "Ahmed",
+    "lastName": "Ali",
+    "birthDate": "1988-09-12",
+    "email": "ahmed.ali@example.com",
+    "phone": "8005551234",
+    "streetAddress1": "15 Tahrir Square",
+    "streetAddress2": "",
+    "city": "Cairo",
+    "state": "Cairo Governorate",
+    "postalCode": "11511",
+    "country": "Egypt"
+  }
+]
