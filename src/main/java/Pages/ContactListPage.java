@@ -17,7 +17,7 @@ public class ContactListPage {
             By.cssSelector("tr.contactTableBodyRow > td:nth-of-type(7)"), //city,state,postal code
             By.cssSelector("tr.contactTableBodyRow > td:nth-of-type(8)") //country
     };
-    private final By editContactButton = By.cssSelector("tr.contactTableBodyRow");
+    private final By selectContactButton = By.cssSelector("tr.contactTableBodyRow");
 
     public ContactListPage(WebDriver browser) {
         mySel = new self_selenium(browser);
@@ -40,8 +40,8 @@ public class ContactListPage {
         return data;
     }
 
-    public void EditContactData() {
-        mySel.click(editContactButton);
+    public void SelectContact() {
+        mySel.click(selectContactButton);
     }
 
 }

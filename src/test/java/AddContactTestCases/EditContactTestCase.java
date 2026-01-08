@@ -2,10 +2,7 @@ package AddContactTestCases;
 
 import AuthenticationTestCases.SignUpUtil;
 import AuthenticationTestCases.user;
-import Pages.AddContactPage;
-import Pages.ContactListPage;
-import Pages.HomePage;
-import Pages.SignUpPage;
+import Pages.*;
 import mySeleniumFramework.self_selenium;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,12 +11,14 @@ import org.testng.annotations.*;
 
 import java.io.FileNotFoundException;
 
-public class ValidAddContact {
+public class EditContactTestCase {
     private WebDriver browser;
     private HomePage homePage;
     private SignUpPage signUpPage;
     private ContactListPage contactList;
     private AddContactPage addContactPage;
+    private ContactDetailsPage contactDetailsPage;
+    private EditContactPage editContactPage;
     private self_selenium mySel;
 
     @BeforeMethod
@@ -29,6 +28,8 @@ public class ValidAddContact {
         signUpPage = new SignUpPage(browser);
         contactList = new ContactListPage(browser);
         addContactPage = new AddContactPage(browser);
+        contactDetailsPage = new ContactDetailsPage(browser);
+        editContactPage = new EditContactPage(browser);
     }
 
     @AfterMethod
@@ -57,7 +58,7 @@ public class ValidAddContact {
     }
 
     @Test(dataProvider = "AddContactData")
-    public void testValidAddContact(user userData, Contact contactData) {
+    public void testEditContact(user userData, Contact contactData) {
         Assert.assertEquals(homePage.initializeBrowser(), "https://thinking-tester-contact-list.herokuapp.com/");
         homePage.clickSignUpButton();
         Assert.assertEquals(signUpPage.GetSignUpPageTitle(), "Add User");
@@ -77,6 +78,22 @@ public class ValidAddContact {
                 contactData.state,
                 contactData.postalCode,
                 contactData.country);
+        contactList.SelectContact();
+        contactDetailsPage.clickEditContactButton();
+        Assert.assertTrue(editContactPage.GetTitleText().contains("Edit Contact"));
+        editContactPage.AddContactDetails(
+                contactData.firstName,
+                contactData.lastName,
+                contactData.birthDate,
+                contactData.email,
+                contactData.phone,
+                contactData.streetAddress1,
+                contactData.streetAddress2,
+                "New York",
+                contactData.state,
+                contactData.postalCode,
+                "Argentina"
+        );
         String[] actual = contactList.FetchContactData();
         Assert.assertTrue(actual[0].contains(contactData.firstName), "First name mismatch");
         Assert.assertTrue(actual[0].contains(contactData.lastName), "Last name mismatch");
@@ -85,10 +102,11 @@ public class ValidAddContact {
         Assert.assertTrue(actual[3].contains(contactData.phone), "Phone mismatch");
         Assert.assertTrue(actual[4].contains(contactData.streetAddress1), "Address1 mismatch");
         Assert.assertTrue(actual[4].contains(contactData.streetAddress2), "Address2 mismatch");
-        Assert.assertTrue(actual[5].contains(contactData.city), "city mismatch");
+        Assert.assertTrue(actual[5].contains("New York"), "city mismatch");
         Assert.assertTrue(actual[5].contains(contactData.state), "state mismatch");
         Assert.assertTrue(actual[5].contains(contactData.postalCode), "Postal Code mismatch");
-        Assert.assertTrue(actual[6].contains(contactData.country), "country mismatch");
+        Assert.assertTrue(actual[6].contains("Argentina"), "country mismatch");
+
 
     }
 }
