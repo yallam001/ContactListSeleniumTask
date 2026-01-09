@@ -2,10 +2,7 @@ package Pages;
 
 import mySeleniumFramework.self_selenium;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-
-import java.time.Duration;
 
 public class SignUpPage {
     private final self_selenium mySel;
@@ -38,8 +35,7 @@ public class SignUpPage {
         mySel.click(submitButton);
     }
 
-    public String GetErrorText() {
-        mySel.fluentWait(errorEmailAlreadyInUse, Duration.ofSeconds(10), Duration.ofMillis(500), "Can't find the element", NoSuchElementException.class);
-        return mySel.getText(errorEmailAlreadyInUse);
+    public boolean VerifySwitchContactListPage() {
+        return mySel.getPageTitle().contains("Contact List");
     }
 }

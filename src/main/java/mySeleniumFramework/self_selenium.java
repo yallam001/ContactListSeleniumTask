@@ -99,6 +99,20 @@ public class self_selenium {
         fluentWait.until(ExpectedConditions.visibilityOfElementLocated(loc));
     }
 
+    public void presenceTextFluentWait(By loc,
+                                       Duration time,
+                                       Duration pollingTime,
+                                       String timeoutMessage,
+                                       Class<? extends Throwable> exceptionType,
+                                       String text) {
+        Wait<WebDriver> fluentWait = new FluentWait<>(getBrowser())
+                .withTimeout(time) // Maximum wait time
+                .pollingEvery(pollingTime) // Check every 500ms
+                .withMessage(timeoutMessage)
+                .ignoring(exceptionType);       // Ignore this exception during polling
+        fluentWait.until(ExpectedConditions.textToBePresentInElementLocated(loc, text));
+    }
+
     public String getPageTitle() {
         return getBrowser().getTitle();
     }

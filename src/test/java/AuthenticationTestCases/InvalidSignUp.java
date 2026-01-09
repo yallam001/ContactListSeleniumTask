@@ -59,7 +59,7 @@ public class InvalidSignUp {
         Assert.assertEquals(actualSignUpTitle, "Add User");
         s.EnterSignUpDetails(userData.firstName, userData.lastName, userData.email, userData.password);
         s.ClickSubmitButton();
-        if (s.GetErrorText().contains("Email address")) {
+        if (!(s.VerifySwitchContactListPage())) {
             browser.quit();
         }
     }

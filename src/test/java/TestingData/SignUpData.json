@@ -1,32 +1,32 @@
 [
   {
+    "firstName": "Jackson",
+    "lastName": "Foster",
+    "email": "jackson.foster@example.com",
+    "password": "Jackson@Secure2026!"
+  },
+  {
+    "firstName": "Mia",
+    "lastName": "Sullivan",
+    "email": "mia.sullivan@example.com",
+    "password": "Mia#Pass88"
+  },
+  {
     "firstName": "Lucas",
-    "lastName": "Miller",
-    "email": "lucas.miller@example.com",
-    "password": "Lucas@Secure2026"
+    "lastName": "Hayes",
+    "email": "lucas.hayes@example.com",
+    "password": "Lucas!Strong99"
   },
   {
-    "firstName": "Avery",
-    "lastName": "Thompson",
-    "email": "avery.thompson@example.com",
-    "password": "Avery#Pass88"
+    "firstName": "Aria",
+    "lastName": "Coleman",
+    "email": "aria.coleman@example.com",
+    "password": "Aria@Safe123"
   },
   {
-    "firstName": "Grace",
-    "lastName": "Anderson",
-    "email": "grace.anderson@example.com",
-    "password": "Grace!Strong99"
-  },
-  {
-    "firstName": "Elijah",
-    "lastName": "Roberts",
-    "email": "elijah.roberts@example.com",
-    "password": "Elijah@Secure77"
-  },
-  {
-    "firstName": "Madison",
-    "lastName": "Clark",
-    "email": "madison.clark@example.com",
-    "password": "Madison#Safe123"
+    "firstName": "Daniel",
+    "lastName": "Price",
+    "email": "daniel.price@example.com",
+    "password": "Daniel#Secure77"
   }
 ]
