@@ -13,6 +13,7 @@ public class SignUpPage {
     private final By emailField = By.cssSelector("input#email");
     private final By passwordField = By.cssSelector("input#password");
     private final By errorEmailAlreadyInUse = By.cssSelector("span#error");
+    private final By errorUserValidationText = By.cssSelector("span#error");
     private final By submitButton = By.cssSelector("button#submit");
 
 
@@ -37,5 +38,15 @@ public class SignUpPage {
 
     public boolean VerifySwitchContactListPage() {
         return mySel.getPageTitle().contains("Contact List");
+    }
+
+    public boolean VerifyUserValidationText() {
+        mySel.explicitWait(errorUserValidationText);
+        return mySel.getText(errorUserValidationText).contains("User validation failed");
+    }
+
+    public boolean VerifyIncorrectEmailAndPassword() {
+        mySel.explicitWait(errorUserValidationText);
+        return mySel.getText(errorUserValidationText).contains("Email is invalid, password: Path `password` (`qwyr`) is shorter than the minimum allowed length");
     }
 }

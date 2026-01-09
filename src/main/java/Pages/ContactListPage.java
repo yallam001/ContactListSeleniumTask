@@ -9,6 +9,7 @@ public class ContactListPage {
     private final self_selenium mySel;
     private final By contactListTitleText = By.cssSelector("header > h1");
     private final By addNewContactButton = By.cssSelector("button#add-contact");
+    private final By errorContactFieldText = By.cssSelector("span#error");
     private final By[] contactTableData = {By.cssSelector("tr.contactTableBodyRow > td:nth-of-type(2)"), //firstName, lastName
             By.cssSelector("tr.contactTableBodyRow > td:nth-of-type(3)"), //birthdate
             By.cssSelector("tr.contactTableBodyRow > td:nth-of-type(4)"), //email
@@ -38,6 +39,11 @@ public class ContactListPage {
             data[i] = mySel.getText(contactTableData[i]); // your wrapper
         }
         return data;
+    }
+
+    public boolean ErrorFieldContactText() {
+        mySel.explicitWait(errorContactFieldText);
+        return mySel.getText(errorContactFieldText).contains("Contact validation failed");
     }
 
     public void SelectContact() {

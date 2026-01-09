@@ -1,0 +1,15 @@
+[
+  {
+    "firstName": "12345",
+    "lastName": "@@@@",
+    "birthDate": "12-09-1988",
+    "email": "ahmed.ali[at]example",
+    "phone": "phone-number",
+    "streetAddress1": "### Main St",
+    "streetAddress2": "N/A",
+    "city": "123City",
+    "state": "!!State",
+    "postalCode": "ABCDEF",
+    "country": "123Country"
+  }
+]
